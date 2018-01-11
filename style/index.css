@@ -67,3 +67,15 @@ h1 {
   font-family: myFont;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+
+h3 {
+  font-size: 45px;
+  color: white;
+  padding: 0;
+  padding-top: 70px;
+  margin: 0;
+  text-align: center;
+  font-family: myFont;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  letter-spacing: 0.5em;
+}
