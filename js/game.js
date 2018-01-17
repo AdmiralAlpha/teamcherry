@@ -1,4 +1,4 @@
-var style_festival = [
+var style_spy = [
   {
     "elementType": "geometry",
     "stylers": [
@@ -290,48 +290,48 @@ var style_festival = [
   }
   ];
   
-  var styled_festival = new google.maps.StyledMapType(style_festival, {name: "Festival style"});
+  var styled_spy = new google.maps.StyledMapType(style_spy, {name: "spy style"});
   
   
   //Create the variables that will be used within the map configuration options.
   //The latitude and longitude of the center of the map.
-  var festivalMapCenter = new google.maps.LatLng(59.313289, 18.110288);
+  var spyMapCenter = new google.maps.LatLng(59.313289, 18.110288);
   //The degree to which the map is zoomed in. This can range from 0 (least zoomed) to 21 and above (most zoomed).
-  var festivalMapZoom = 15;
+  var spyMapZoom = 15;
   //The max and min zoom levels that are allowed.
-  var festivalMapZoomMax = 21;
-  var festivalMapZoomMin = 6;
+  var spyMapZoomMax = 21;
+  var spyMapZoomMin = 6;
   
   //These options configure the setup of the map. 
-  var festivalMapOptions = { 
-        center: festivalMapCenter, 
-            zoom: festivalMapZoom,
+  var spyMapOptions = { 
+        center: spyMapCenter, 
+            zoom: spyMapZoom,
         //The type of map. In addition to ROADMAP, the other 'premade' map styles are SATELLITE, TERRAIN and HYBRID. 
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-        maxZoom:festivalMapZoomMax,
-        minZoom:festivalMapZoomMin,
+        maxZoom:spyMapZoomMax,
+        minZoom:spyMapZoomMin,
         //Turn off the map controls as we will be adding our own later.
         panControl: false,
         mapTypeControl: false,
   };
   
   //Create the variable for the main map itself.
-  var festivalMap;
+  var spyMap;
   
-  //When the page loads, the line below calls the function below called 'loadFestivalMap' to load up the map.
-  google.maps.event.addDomListener(window, 'load', loadFestivalMap);
+  //When the page loads, the line below calls the function below called 'loadspyMap' to load up the map.
+  google.maps.event.addDomListener(window, 'load', loadspyMap);
   
   
   
   //THE MAIN FUNCTION THAT IS CALLED WHEN THE WEB PAGE LOADS --------------------------------------------------------------------------------
-  function loadFestivalMap() {
+  function loadspyMap() {
     
-  //The empty map variable ('festivalMap') was created above. The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'festival-map' (see code within the 'body' tags below), and applies the 'festivalMapOptions' (above) to configure this map. 
-  festivalMap = new google.maps.Map(document.getElementById("festival-map"), festivalMapOptions);	
+  //The empty map variable ('spyMap') was created above. The line below creates the map, assigning it to this variable. The line below also loads the map into the div with the id 'spy-map' (see code within the 'body' tags below), and applies the 'spyMapOptions' (above) to configure this map. 
+  spyMap = new google.maps.Map(document.getElementById("spyMap"), spyMapOptions);	
   
     
-  festivalMap.mapTypes.set('map_styles_festival', styled_festival);
-  festivalMap.setMapTypeId('map_styles_festival');
+  spyMap.mapTypes.set('map_styles_spy', styled_spy);
+  spyMap.setMapTypeId('map_styles_spy');
   
   
   //Calls the function below to load up all the map markers.
@@ -355,7 +355,7 @@ var style_festival = [
         //uses the position set above.
       position: markerPositionGlastonbury,
       //adds the marker to the map.
-        map: festivalMap,
+        map: spyMap,
         title: 'KYH',
   });
   
