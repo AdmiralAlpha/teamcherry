@@ -175,3 +175,8 @@ h3 {
     font-size: 40px;
   }
 }
+
+a {
+  text-decoration: none;
+  color: white;
+}
