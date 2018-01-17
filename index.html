@@ -10,9 +10,51 @@
     <div class="flexButton">
     <header onclick="dropclose()">
         <button class="buttonL buttons" type="submit" name="loginbutton" onclick="showLogin()">Log in</button>
-        <button class="buttonR buttons" type="submit" name="registerbutton" onclick="showRegister()">Sign in</button>
+        <button class="buttonR buttons" type="submit" name="registerbutton" id="signUpButton">Sign up</button>
     </header>
     </div>
+
+    <div id="myPopupModal" class="modal1">
+        
+          <div class="modal1-content">
+            <span class="exit">&times;</span>
+            <p>Create an account</p>
+            <form action="">
+                <div class="rowModal">
+                    <label for="email">E-mail adress</label>
+                    <input type="text" id="email">
+                </div>
+                <div class="rowModal">
+                    <label for="username">Username</label>
+                    <input type="text" id="username">
+                </div>
+                <div class="rowModal">
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
+                <div class="rowModal">
+                    <label for="password">Confirm password</label>
+                    <input type="password" id="password">
+                </div>
+                <div class="rowModal">
+                    <label for="birth">Date of birth</label>
+                    <input type="date" id="birth">
+                </div>
+                <div class="rowModal1">
+                    <label for="team">Which side are you on?</label>
+                    <input type="checkbox"><input type="checkbox">
+                    </div>
+                <div class="rowModal2">
+                <input type="checkbox" checked="checked"> I agree to the Terms of Use
+                </div>
+                <div class="rowModal register">
+                    <input type="button" value="Sign Up" id="register" onclick="validate()"/>
+                </div>
+            </form>
+          </div>
+        </div>
+
+        <script src="js/signup.js"></script> 
 
     <div class="container">
       <h1>Cold spies</h1>

@@ -197,6 +197,63 @@ h3 {
 .img {
   height: 65px;
   width: 65px;
+}
+  .rowModal {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+.rowModal input {
+    margin: 2px 0;
+    padding: 2px 0;
+    align-items: center;
+}
+.rowModal1 {
+    padding: 15px 0;
+}
+.modal1 {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    padding-top: 90px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.644);
+}
+
+.modal1-content {
+    font-variant: small-caps;
+    font-size: 18px;
+    background-color: #ebebeb;
+    margin: auto;
+    padding: 30px;
+    width: 20%;
+    /*top: 50%;
+    left: 50%;*/
+    border: 15px solid rgba(0, 0, 0, 0.774);
+}
+
+.modal1-content p {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.exit {
+    color: #919191;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.exit:hover,
+.exit:focus {
+    color: rgb(122, 0, 0);
+    text-decoration: none;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 768px){
   .container h1{
