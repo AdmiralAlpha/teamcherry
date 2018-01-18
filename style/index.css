@@ -197,6 +197,7 @@ h3 {
 .img {
   height: 65px;
   width: 65px;
+}
 
 @media screen and (max-width: 768px){
   .container h1{
