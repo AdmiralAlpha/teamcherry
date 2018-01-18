@@ -198,6 +198,7 @@ h3 {
   height: 65px;
   width: 65px;
 }
+<<<<<<< HEAD
   .rowModal {
     padding: 15px 0;
     display: flex;
@@ -254,6 +255,8 @@ h3 {
     text-decoration: none;
     cursor: pointer;
 }
+=======
+>>>>>>> bf183d712776334cbf4359167d70b3330fac2bda
 
 @media screen and (max-width: 768px){
   .container h1{
