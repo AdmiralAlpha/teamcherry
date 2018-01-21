@@ -198,24 +198,31 @@ h3 {
   height: 65px;
   width: 65px;
 }
+
 .rowModal {
   padding: 15px 0;
   display: flex;
   flex-direction: column;
 }
+
 .rowModal input {
   margin: 2px 0;
   padding: 2px 0;
   align-items: center;
 }
+
 .rowModal1 {
   padding: 15px 0;
+}
+
+.rowModal2 {
+  padding-bottom: 15px;
 }
 .modal1 {
   display: none;
   position: fixed; 
   z-index: 1;
-  padding-top: 64px;
+  padding-top: 25px;
   left: 0;
   top: 0;
   width: 100%; 
