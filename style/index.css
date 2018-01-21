@@ -269,6 +269,12 @@ h3 {
   }
 }
 
+@media screen and (max-width: 1024px){
+  .modal1-content {
+    width: 50%;
+  }
+}
+
 a {
   text-decoration: none;
   color: white;
