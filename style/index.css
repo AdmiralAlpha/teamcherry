@@ -200,7 +200,7 @@ h3 {
 }
 
 .rowModal {
-  padding: 15px 0;
+  padding: 13px 0;
   display: flex;
   flex-direction: column;
 }
@@ -211,18 +211,25 @@ h3 {
   align-items: center;
 }
 
-.rowModal1 {
-  padding: 15px 0;
+.rowModal1,
+.rowModal3 {
+  padding: 13px 0;
+}
+
+.rowModal3 {
+  display:flex;
+  justify-content: center;
+  font-size: 15px;
 }
 
 .rowModal2 {
-  padding-bottom: 15px;
+  padding-bottom: 13px;
 }
 .modal1 {
   display: none;
   position: fixed; 
   z-index: 1;
-  padding-top: 25px;
+  padding-top: 20px;
   left: 0;
   top: 0;
   width: 100%; 
