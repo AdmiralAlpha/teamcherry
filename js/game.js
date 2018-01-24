@@ -4,9 +4,10 @@ function startMap () {
 
 function initMap (myPos) {
 var MapCenter = new google.maps.LatLng(myPos.coords.latitude, myPos.coords.longitude);
-var MapZoom = 18;
+var MapZoom = 6;
 var MapZoomMax = 24;
-var MapZoomMin = 12;
+var MapZoomMin = 6;
+// var MapZoomMin = 12;
 
 var mapOptions = { 
   center: MapCenter, 
@@ -20,17 +21,21 @@ var mapOptions = {
   mapTypeControl: false,
 };
 
-myMap = new google.maps.Map(document.getElementById("spyMap"), mapOptions);	
+myMap = new google.maps.Map(document.getElementById("myMap"), mapOptions);	
 runMap(MapCenter);
+newMarker();
 }
 
 google.maps.event.addDomListener(window, 'load', startMap);
 //var myLatlng = {lat: myPos.coords.latitude, lng: myPos.coords.longitude};
-function newMarker(pos) {
+
+function newMarker() {
+  var myLatLng = {lat: 59.313289, lng: 18.110288};
+
   var marker = new google.maps.Marker({
-      position: pos,
+      position: myLatLng,
       map: myMap,
-      title: 'Click to zoom'
+      title: 'Quest'
     });
 }
 
