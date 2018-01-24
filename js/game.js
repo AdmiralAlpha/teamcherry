@@ -43,12 +43,13 @@ var marker = new google.maps.Marker({
 });
 }
 
-// const e = React.createElement;
 
-// ReactDOM.render(
-//     e('a', { href: "https://google.se" },
-//       e('img', { src: "https://imgs.xkcd.com/comics/random_number.png"})
-//   ),
-//     document.getElementById('react')
+const e = React.createElement;
 
-// );
+ReactDOM.render(
+    e('a', { href: "https://google.se" },
+      e('img', { src: "https://imgs.xkcd.com/comics/random_number.png"})
+  ),
+    document.getElementById('react')
+
+);
