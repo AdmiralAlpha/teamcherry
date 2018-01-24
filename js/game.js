@@ -4,9 +4,11 @@ function startMap () {
 
 function initMap (myPos) {
 var MapCenter = new google.maps.LatLng(myPos.coords.latitude, myPos.coords.longitude);
-var MapZoom = 6;
+var MapZoom = 7;
 var MapZoomMax = 24;
-var MapZoomMin = 6;
+var MapZoomMin = 5;
+// var MapZoom = 18;
+// var MapZoomMax = 24;
 // var MapZoomMin = 12;
 
 var mapOptions = { 
@@ -19,6 +21,86 @@ var mapOptions = {
   //Turn off the map controls as we will be adding our own later.
   panControl: false,
   mapTypeControl: false,
+  styles: [
+    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+    {
+      featureType: 'administrative.locality',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'poi',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'geometry',
+      stylers: [{color: '#263c3f'}]
+    },
+    {
+      featureType: 'poi.park',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry',
+      stylers: [{color: '#38414e'}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'geometry.stroke',
+      stylers: [{color: '#212a37'}]
+    },
+    {
+      featureType: 'road',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry',
+      stylers: [{color: '#746855'}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'geometry.stroke',
+      stylers: [{color: '#1f2835'}]
+    },
+    {
+      featureType: 'road.highway',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'transit',
+      elementType: 'geometry',
+      stylers: [{color: '#2f3948'}]
+    },
+    {
+      featureType: 'transit.station',
+      elementType: 'labels.text.fill',
+      stylers: [{"visibility": "off"}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'geometry',
+      stylers: [{color: '#17263c'}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.fill',
+      stylers: [{color: '#515c6d'}]
+    },
+    {
+      featureType: 'water',
+      elementType: 'labels.text.stroke',
+      stylers: [{color: '#17263c'}]
+    }
+  ]
 };
 
 myMap = new google.maps.Map(document.getElementById("myMap"), mapOptions);	
@@ -27,23 +109,23 @@ newMarker();
 }
 
 google.maps.event.addDomListener(window, 'load', startMap);
-//var myLatlng = {lat: myPos.coords.latitude, lng: myPos.coords.longitude};
 
 function newMarker() {
-  var myLatLng = {lat: 59.313289, lng: 18.110288};
+var myLatLng = {lat: 59.313289, lng: 18.110288};
 
-  var marker = new google.maps.Marker({
-      position: myLatLng,
-      map: myMap,
-      title: 'Quest'
-    });
+var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: myMap,
+    title: 'Quest'
+  });
+  marker.setAnimation(google.maps.Animation.BOUNCE);
 }
-
 
 function runMap (MapCenter) {
 var marker = new google.maps.Marker({
   position: MapCenter,
   map: myMap,
+  animation: google.maps.Animation.DROP,
   title: 'Click to zoom'
 });
 }
