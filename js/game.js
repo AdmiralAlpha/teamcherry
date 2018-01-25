@@ -1,5 +1,33 @@
+options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+var marker, questmarker;
+var presetDistance = 30;
+
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+
+function checkClue(pos) {
+  //console.log(marker);
+  playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+  questPos = questmarker.getPosition();
+  marker.setPosition(playerPos);
+  //console.log("CheckPos called");
+  // console.log(pos.coords);
+  dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
+  console.log(dist);
+  if (dist <= presetDistance) {
+    // Checkpoint reached!
+    
+  }
+
+}
+
 function startMap () {
-  var myPos = navigator.geolocation.watchPosition(initMap);
+  var myPos = navigator.geolocation.getCurrentPosition(initMap);
 }
 
 function initMap (myPos) {
@@ -102,30 +130,36 @@ var mapOptions = {
 
 myMap = new google.maps.Map(document.getElementById("myMap"), mapOptions);	
 runMap(MapCenter);
-newMarker();
+
 }
 
 google.maps.event.addDomListener(window, 'load', startMap);
 
+// marker.setPosition(LatLng);
 function newMarker() {
 var myLatLng = {lat: 59.313289, lng: 18.110288};
 
-var marker = new google.maps.Marker({
+questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
     title: 'Quest'
   });
-  marker.setAnimation(google.maps.Animation.BOUNCE);
+  questmarker.setAnimation(google.maps.Animation.BOUNCE);
 }
 
 function runMap (MapCenter) {
-var marker = new google.maps.Marker({
+marker = new google.maps.Marker({
   position: MapCenter,
   map: myMap,
   animation: google.maps.Animation.DROP,
-  title: 'Click to zoom'
+  title: 'Player'
 });
+newMarker();
+navigator.geolocation.watchPosition(checkClue, error, options);
+
 }
+
+
 
 
 const e = React.createElement;
