@@ -4,12 +4,9 @@ function startMap () {
 
 function initMap (myPos) {
 var MapCenter = new google.maps.LatLng(myPos.coords.latitude, myPos.coords.longitude);
-var MapZoom = 7;
+var MapZoom = 15;
 var MapZoomMax = 24;
-var MapZoomMin = 5;
-// var MapZoom = 18;
-// var MapZoomMax = 24;
-// var MapZoomMin = 12;
+var MapZoomMin = 12;
 
 var mapOptions = { 
   center: MapCenter, 
