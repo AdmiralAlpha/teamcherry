@@ -5,7 +5,7 @@ options = {
 };
 
 var marker, questmarker;
-var presetDistance = 10; //meter?
+var presetDistance = 5; //meter?
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
@@ -23,7 +23,7 @@ function checkQuest(pos) {
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
       infowindow.open(myMap, marker);
-      questmarker.setPosition( new google.maps.LatLng( 59.313589, 18.110288 ) );
+      questmarker.setPosition( new google.maps.LatLng( 59.313989, 18.110288 ) );
     });
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
@@ -32,7 +32,9 @@ function checkQuest(pos) {
 }
 
 // function moveMarker() {
-//   if (infowindow = open) {
+//   questPos = questmarker.getPosition();
+//   const pos3 = { lat: 59.313589, lng: 18.110288 };
+//   if (questPos = pos3) {
 //     marker.setAnimation(google.maps.Animation.BOUNCE);
 //   }
 // }
@@ -43,7 +45,7 @@ function startMap() {
 
 function initMap(myPos) {
   var MapCenter = new google.maps.LatLng(myPos.coords.latitude, myPos.coords.longitude);
-  var MapZoom = 13;
+  var MapZoom = 15;
   var MapZoomMax = 24;
   var MapZoomMin = 6;
 
