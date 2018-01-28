@@ -11,7 +11,7 @@ function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
-function checkClue(pos) {
+function checkQuest(pos) {
   //console.log(marker);
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
   questPos = questmarker.getPosition();
@@ -21,15 +21,21 @@ function checkClue(pos) {
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
   console.log(dist);
   if (dist <= presetDistance) {
-    // Quest reached!
     questmarker.addListener('click', function() {
-      infowindow.open(myMap, questmarker);
+      infowindow.open(myMap, marker);
+      questmarker.setPosition( new google.maps.LatLng( 59.313589, 18.110288 ) );
     });
-  } else {
+  } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
   }
 
 }
+
+// function moveMarker() {
+//   if (infowindow = open) {
+//     marker.setAnimation(google.maps.Animation.BOUNCE);
+//   }
+// }
 
 function startMap() {
   var myPos = navigator.geolocation.getCurrentPosition(initMap);
@@ -37,7 +43,7 @@ function startMap() {
 
 function initMap(myPos) {
   var MapCenter = new google.maps.LatLng(myPos.coords.latitude, myPos.coords.longitude);
-  var MapZoom = 8;
+  var MapZoom = 13;
   var MapZoomMax = 24;
   var MapZoomMin = 6;
 
@@ -160,28 +166,18 @@ function runMap(MapCenter) {
     title: 'Player'
   });
   newMarker();
-  navigator.geolocation.watchPosition(checkClue, error, options);
+  navigator.geolocation.watchPosition(checkQuest, error, options);
 
 }
 
 var contentString = '<div id="content">'+
 '<div id="siteNotice">'+
 '</div>'+
-'<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+'<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
 '<div id="bodyContent">'+
-'<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large ' +
-'sandstone rock formation in the southern part of the '+
-'Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) '+
-'south west of the nearest large town, Alice Springs; 450&#160;km '+
-'(280&#160;mi) by road. Kata Tjuta and Uluru are the two major '+
-'features of the Uluru - Kata Tjuta National Park. Uluru is '+
-'sacred to the Pitjantjatjara and Yankunytjatjara, the '+
-'Aboriginal people of the area. It has many springs, waterholes, '+
-'rock caves and ancient paintings. Uluru is listed as a World '+
-'Heritage Site.</p>'+
-'<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">'+
-'https://en.wikipedia.org/w/index.php?title=Uluru</a> '+
-'(last visited June 22, 2009).</p>'+
+'<p>Welcome <b>Agent Cherry</b>.' +
+'This is the beginning of your mission.' +
+'Proceed to the next marker to continue.</p>'+
 '</div>'+
 '</div>';
 
