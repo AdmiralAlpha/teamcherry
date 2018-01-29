@@ -139,7 +139,7 @@ footer {
   width: 50%;
   background-color: #3b2f23;
   text-align: center;
-  padding: 30px;
+  padding:30px;
   letter-spacing: 0.1em;
 }
 
@@ -352,7 +352,7 @@ h3 {
 }
 
 .socialIcons {
-  margin-right: 50px;
+  margin-right: 0px;
 }
 
 footer p {
@@ -372,6 +372,11 @@ footer p {
     font-size: 30px;
   }
   .cont p{
+    font-size: 1.7em;
+    width: 70%;
+  }
+  .content p{
+    font-size: 1.2em;
     width: 70%;
   }
 }
@@ -380,12 +385,18 @@ footer p {
   .buttons1{
     font-size: 40px;
   }
+
 }
 
 @media screen and (max-width: 1024px){
   .modal1-content {
     width: 50%;
   }
+  .content p{
+    font-size: 1.2em;
+    width: 70%;
+  }
+
 }
 
 a {
