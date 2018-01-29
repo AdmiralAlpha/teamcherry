@@ -7,23 +7,23 @@ options = {
 var marker, questmarker;
 var presetDistance = 5; //meter?
 
+var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313889, lng: 18.110288}, {lat: 59.313629, lng: 18.110288} ];
+
+
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
 }
 
 function checkQuest(pos) {
-  //console.log(marker);
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
   questPos = questmarker.getPosition();
   marker.setPosition(playerPos);
-  //console.log("CheckPos called");
-  // console.log(pos.coords);
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
   console.log(dist);
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
       infowindow.open(myMap, marker);
-      questmarker.setPosition( new google.maps.LatLng( 59.313989, 18.110288 ) );
+      questmarker.setPosition( new google.maps.LatLng( locs[+1] ) );
     });
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
@@ -31,13 +31,6 @@ function checkQuest(pos) {
 
 }
 
-// function moveMarker() {
-//   questPos = questmarker.getPosition();
-//   const pos3 = { lat: 59.313589, lng: 18.110288 };
-//   if (questPos = pos3) {
-//     marker.setAnimation(google.maps.Animation.BOUNCE);
-//   }
-// }
 
 function startMap() {
   var myPos = navigator.geolocation.getCurrentPosition(initMap);
@@ -52,7 +45,6 @@ function initMap(myPos) {
   var mapOptions = {
     center: MapCenter,
     zoom: MapZoom,
-    //The type of map. In addition to ROADMAP, the other 'premade' map styles are SATELLITE, TERRAIN and HYBRID. 
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     maxZoom: MapZoomMax,
     minZoom: MapZoomMin,
@@ -150,7 +142,7 @@ google.maps.event.addDomListener(window, 'load', startMap);
 
 // marker.setPosition(LatLng);
 function newMarker() {
-  var myLatLng = { lat: 59.313289, lng: 18.110288 };
+  var myLatLng = locs[0];
 
   questmarker = new google.maps.Marker({
     position: myLatLng,
@@ -158,6 +150,7 @@ function newMarker() {
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
+
 }
 
 function runMap(MapCenter) {
@@ -185,6 +178,21 @@ var contentString = '<div id="content">'+
 
 var infowindow = new google.maps.InfoWindow({
 content: contentString
+});
+
+var contentString2 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Quest 2</h1>'+
+'<div id="bodyContent">'+
+'<p>Welcome <b>Agent Cherry</b>.' +
+'This is the beginning of your mission.' +
+'Proceed to the next marker to continue.</p>'+
+'</div>'+
+'</div>';
+
+var infowindow2 = new google.maps.InfoWindow({
+content: contentString2
 });
 
 
