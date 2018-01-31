@@ -147,6 +147,7 @@ function newMarker() {
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
+    icon: '../img/usa.pin.png',
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
