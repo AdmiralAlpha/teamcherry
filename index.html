@@ -11,33 +11,10 @@
 <body>
     <div class="flexBtn">
     <header onclick="dropclose()">
-
+      <button class="btnL btns" type="submit" name="loginbutton" id="signUpButton" onclick="">Log in</button>
       <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="">Sign up</button>
     </header>
     </div>
-
-    <div class="btnL" class="btns">
-             <button class="btnLo" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Log in</button>
-             <div id="id01" class="modal">
-               <div class="modal-content" class="animate">
-                 <div class="login-imgcontainer">
-                   <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                 </div>
-                 <div class="container2">
-                   <form name="login">
-                     <label><i class="fa fa-user" style="font-size:24px"></i></label>
-                     <input name="id" type="text" placeholder="Användarnamn" required>
-                     <label><i class="fa fa-lock" style="font-size:24px"></i></label>
-                     <input name="pass" type="password" placeholder="Lösenord" required>
-                     <p id="invalid_message"></p>
-                     <button type="button" value="login" onclick="pasuser(this.form)">GO!</button>
-                   </form>
-                 </div>
-               </div>
-             </div>
-           </div>
-
-           <script src="js/login.js"></script>
 
 
 
