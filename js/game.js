@@ -7,8 +7,11 @@ options = {
 var marker, questmarker;
 var presetDistance = 5; //meter?
 
-var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313889, lng: 18.110288}, {lat: 59.313629, lng: 18.110288} ];
+var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
 
+var ques = [ infowindow, infowindow2, infowindow3, infowindow4 ];
+
+var i = 0;
 
 function error(err) {
   console.warn('ERROR(' + err.code + '): ' + err.message);
@@ -23,7 +26,13 @@ function checkQuest(pos) {
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
       infowindow.open(myMap, marker);
-      questmarker.setPosition( new google.maps.LatLng( locs[+1] ) );
+    //   for (i = 0; i < locs.length; i++) { 
+    //     questmarker.setPosition( new google.maps.LatLng( locs[i] ) );
+    // }
+      if (i<3) {
+        i++;
+      }
+      questmarker.setPosition( new google.maps.LatLng( locs[i] ) );
     });
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
@@ -142,7 +151,7 @@ google.maps.event.addDomListener(window, 'load', startMap);
 
 // marker.setPosition(LatLng);
 function newMarker() {
-  var myLatLng = locs[0];
+  var myLatLng = locs[i];
 
   questmarker = new google.maps.Marker({
     position: myLatLng,
@@ -194,6 +203,36 @@ var contentString2 = '<div id="content">'+
 
 var infowindow2 = new google.maps.InfoWindow({
 content: contentString2
+});
+
+var contentString3 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Quest 3</h1>'+
+'<div id="bodyContent">'+
+'<p>Welcome <b>Agent Cherry</b>.' +
+'This is the beginning of your mission.' +
+'Proceed to the next marker to continue.</p>'+
+'</div>'+
+'</div>';
+
+var infowindow3 = new google.maps.InfoWindow({
+content: contentString3
+});
+
+var contentString4 = '<div id="content">'+
+'<div id="siteNotice">'+
+'</div>'+
+'<h1 id="firstHeading" class="firstHeading">Quest 4</h1>'+
+'<div id="bodyContent">'+
+'<p>Welcome <b>Agent Cherry</b>.' +
+'This is the beginning of your mission.' +
+'Proceed to the next marker to continue.</p>'+
+'</div>'+
+'</div>';
+
+var infowindow4 = new google.maps.InfoWindow({
+content: contentString4
 });
 
 
