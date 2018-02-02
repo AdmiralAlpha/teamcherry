@@ -31,7 +31,7 @@
 
                 <div class="rowModal">
                     <label for="email">E-mail address</label>
-                    <input type="text" id="email" <?php echo $email; ?>" required>
+                    <input type="text" id="email" value= "<?php echo $email; ?>" required>
                 </div>
                 <div class="rowModal">
                     <label for="username">Username</label>

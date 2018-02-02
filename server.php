@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
   
   if ($user)
     if ($user['email'] === $email) {
-      array_push($errors, "email already exists");
+      array_push($errors, "Email already exists");
     }
     if ($user['username'] === $username) {
       array_push($errors, "Username already exists");
@@ -44,6 +44,6 @@ if (isset($_POST['submit'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Logged in!";
-    header('location: player.php');
+    header('location: index.php');
   }
 }
