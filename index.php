@@ -1,3 +1,5 @@
+<?php include('server.php') 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,15 +26,16 @@
             <span class="exit">&times;</span>
             <p>Create an account</p>
             
-            <form method="post" action="register1.php">
+            <form method="post" action="index.php">
                     <?php include('errors.php'); ?>
+
                 <div class="rowModal">
                     <label for="email">E-mail address</label>
-                    <input type="text" id="email" required>
+                    <input type="text" id="email" <?php echo $email; ?>" required>
                 </div>
                 <div class="rowModal">
                     <label for="username">Username</label>
-                    <input type="text" id="username" required>
+                    <input type="text" id="username" value="<?php echo $username; ?>" required>
                 </div>
                 <div class="rowModal">
                     <label for="password">Password</label>
