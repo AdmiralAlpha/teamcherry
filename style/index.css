@@ -221,6 +221,9 @@ h3 {
   font-size: 0.4em;
   list-style-type: none;
 }
+.passport button{
+  background-color: black;
+}
 
 
 /*-----------PROFILE ENDS--------------------*/
@@ -330,6 +333,9 @@ footer p {
   .content p{
     font-size: 1.2em;
     width: 70%;
+  }
+  .pass-info{
+    width: 80%;
   }
 }
 
