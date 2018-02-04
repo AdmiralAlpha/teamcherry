@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
   
-  if ($user)
+  if ($user) {
     if ($user['email'] === $email) {
       array_push($errors, "Email already exists");
     }
@@ -44,6 +44,6 @@ if (isset($_POST['submit'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Logged in!";
-    header('location: index.php');
+    /*header('location: player.php');*/ 
   }
 }
