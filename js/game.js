@@ -5,7 +5,7 @@ options = {
 };
 
 var marker, questmarker;
-var presetDistance = 5; //meter?
+var presetDistance = 20; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313889, lng: 18.110288}, {lat: 59.313629, lng: 18.110288} ];
 
