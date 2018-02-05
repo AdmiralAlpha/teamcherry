@@ -293,6 +293,10 @@ a {
 
 /* SIGNUP STRTS HERE*/
 
+.error {
+  color: red;
+}
+
 .rowModal {
   padding: 13px 0;
   display: flex;

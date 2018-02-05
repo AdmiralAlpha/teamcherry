@@ -28,7 +28,6 @@
             <p>Create an account</p>
             
             <form method="post" action="index.php">
-                    <?php include('errors.php'); ?>
 
                 <div class="rowModal">
                     <label for="email">E-mail address</label>
@@ -44,14 +43,14 @@
                 </div>
                 <div class="rowModal">
                     <label for="password">Confirm password</label>
-                    <input type="password" id="cPassword" required>
+                    <input type="password" name="cPassword" id="cPassword" required>
                 </div>
                 <div class="rowModal1">
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
-                    <input type="checkbox" name="team" value="USA"> Usa
-                    <input type="checkbox" name="team" value="Soviet" style="margin-left:35px">Soviet
+                    <input type="checkbox" name="teamU" value="USA"> Usa
+                    <input type="checkbox" name="teamS" value="Soviet" style="margin-left:35px">Soviet
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
@@ -59,6 +58,9 @@
                 <div class="rowModal register">
                     <input type="submit" name="submit" value="Sign Up" id="register" onclick="submit"/>
                 </div>
+
+                <?php include('errors.php'); ?>
+
                 <div class="rowModal3">
                     Already have an account? <a href="login.html" style="color:rgb(51, 71, 255)">Log in here</a>
                 </div>

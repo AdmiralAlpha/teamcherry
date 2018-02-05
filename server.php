@@ -2,7 +2,7 @@
 session_start();
 
 $username = "";
-$email    = "";
+$email = "";
 $password = "";
 $errors = array(); 
 
@@ -19,14 +19,15 @@ if (isset($_POST['submit'])) {
   if (empty($username)) { array_push($errors, "Fill in username"); }
   if (empty($email)) { array_push($errors, "Fill in email"); }
   if (empty($password)) { array_push($errors, "Fill in password"); }
-  if ($password = $cPassword) {
+
+  if ($password != $cPassword) {
 	array_push($errors, "Passwords do not match");
   }
 
   $user_check_query = "SELECT * FROM player WHERE username='$username' OR email='$email' LIMIT 1";
   $result = mysqli_query($db, $user_check_query);
   $user = mysqli_fetch_assoc($result);
-  
+
   if ($user) {
     if ($user['email'] === $email) {
       array_push($errors, "Email already exists");
@@ -44,6 +45,7 @@ if (isset($_POST['submit'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "Logged in!";
-    /*header('location: player.php');*/ 
+    header('location: index.php');
   }
 }
+
