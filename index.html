@@ -1,4 +1,4 @@
-<?php include('server.php') 
+<?php include('server.php')
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +9,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Cold spies</title>
+
 </head>
 <body>
     <div class="flexBtn">
-    <header onclick="dropclose()">
+    <!--><header onclick="dropclose()"></!-->
       <button class="btnL btns" type="submit" name="loginbutton" id="" onclick="">Log in</button>
       <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="">Sign up</button>
     </header>
@@ -22,7 +23,7 @@
 
     <div id="myPopupModal" class="modal1">
 
-          <div class="modal1-content" style="overflow: scroll; height: 100%;">
+          <div class="modal1-content" style="overflow: scroll; height: 85%;">
             <span class="exit">&times;</span>
             <p>Create an account</p>
             
@@ -31,11 +32,11 @@
 
                 <div class="rowModal">
                     <label for="email">E-mail address</label>
-                    <input type="text" name="email" id="email" value= "<?php echo $email; ?>" required>
+                    <input type="email" name="email" id="email" value= "<?php echo $email; ?>" required>
                 </div>
                 <div class="rowModal">
                     <label for="username">Username</label>
-                    <input type="text" name="username" id="username" value="<?php echo $username; ?>" required>
+                    <input type="text" name="username" id="username" value= "<?php echo $username; ?>" required>
                 </div>
                 <div class="rowModal">
                     <label for="password">Password</label>
@@ -43,20 +44,20 @@
                 </div>
                 <div class="rowModal">
                     <label for="password">Confirm password</label>
-                    <input type="password" name="cPassword" id="password" required>
+                    <input type="password" id="cPassword" required>
                 </div>
                 <div class="rowModal1">
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
-                    <input type="checkbox" name="teamU" value="USA"> Usa
-                    <input type="checkbox" name="teamS" value="Soviet" style="margin-left:35px">Soviet
+                    <input type="checkbox" name="team" value="USA"> Usa
+                    <input type="checkbox" name="team" value="Soviet" style="margin-left:35px">Soviet
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
                 </div>
                 <div class="rowModal register">
-                    <input type="submit" name="submit "value="Sign Up" id="register" onclick="validate()"/>
+                    <input type="submit" name="submit" value="Sign Up" id="register" onclick="submit"/>
                 </div>
                 <div class="rowModal3">
                     Already have an account? <a href="login.html" style="color:rgb(51, 71, 255)">Log in here</a>
