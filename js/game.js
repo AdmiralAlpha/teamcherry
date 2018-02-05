@@ -9,8 +9,6 @@ var presetDistance = 5; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
 
-var ques = [ infowindow, infowindow2, infowindow3, infowindow4 ];
-
 var i = 0;
 
 function error(err) {
@@ -25,14 +23,14 @@ function checkQuest(pos) {
   console.log(dist);
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
-      infowindow.open(myMap, marker);
     //   for (i = 0; i < locs.length; i++) { 
     //     questmarker.setPosition( new google.maps.LatLng( locs[i] ) );
     // }
       if (i<3) {
         i++;
       }
-      questmarker.setPosition( new google.maps.LatLng( locs[i] ) );
+      infowindow.open(myMap, marker);
+      questmarker.setPosition( new google.maps.LatLng(locs[i]) );
     });
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
@@ -175,20 +173,20 @@ function runMap(MapCenter) {
 
 }
 
+
+
+
+
 var contentString = '<div id="content">'+
 '<div id="siteNotice">'+
 '</div>'+
 '<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
 '<div id="bodyContent">'+
 '<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission.' +
+'This is the beginning of your mission. ' +
 'Proceed to the next marker to continue.</p>'+
 '</div>'+
 '</div>';
-
-var infowindow = new google.maps.InfoWindow({
-content: contentString
-});
 
 var contentString2 = '<div id="content">'+
 '<div id="siteNotice">'+
@@ -196,14 +194,10 @@ var contentString2 = '<div id="content">'+
 '<h1 id="firstHeading" class="firstHeading">Quest 2</h1>'+
 '<div id="bodyContent">'+
 '<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission.' +
+'This is the beginning of your mission. ' +
 'Proceed to the next marker to continue.</p>'+
 '</div>'+
 '</div>';
-
-var infowindow2 = new google.maps.InfoWindow({
-content: contentString2
-});
 
 var contentString3 = '<div id="content">'+
 '<div id="siteNotice">'+
@@ -211,14 +205,10 @@ var contentString3 = '<div id="content">'+
 '<h1 id="firstHeading" class="firstHeading">Quest 3</h1>'+
 '<div id="bodyContent">'+
 '<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission.' +
+'This is the beginning of your mission. ' +
 'Proceed to the next marker to continue.</p>'+
 '</div>'+
 '</div>';
-
-var infowindow3 = new google.maps.InfoWindow({
-content: contentString3
-});
 
 var contentString4 = '<div id="content">'+
 '<div id="siteNotice">'+
@@ -226,13 +216,15 @@ var contentString4 = '<div id="content">'+
 '<h1 id="firstHeading" class="firstHeading">Quest 4</h1>'+
 '<div id="bodyContent">'+
 '<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission.' +
+'This is the beginning of your mission. ' +
 'Proceed to the next marker to continue.</p>'+
 '</div>'+
 '</div>';
 
-var infowindow4 = new google.maps.InfoWindow({
-content: contentString4
+var ques = [ contentString, contentString2, contentString3, contentString4 ];
+
+var infowindow = new google.maps.InfoWindow({
+  content: ques[i]
 });
 
 
