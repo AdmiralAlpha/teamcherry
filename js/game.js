@@ -5,9 +5,11 @@ options = {
 };
 
 var marker, questmarker;
-var presetDistance = 5; //meter?
+var presetDistance = 20; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
+
+var links = [ '../index.html', 'sovprofile.html', 'usprofile.html' ];
 
 var i = 0;
 
@@ -20,16 +22,14 @@ function checkQuest(pos) {
   questPos = questmarker.getPosition();
   marker.setPosition(playerPos);
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
-  console.log(dist);
+  // console.log(dist);
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
-    //   for (i = 0; i < locs.length; i++) { 
-    //     questmarker.setPosition( new google.maps.LatLng( locs[i] ) );
-    // }
+    window.location.href = links[i];
       if (i<3) {
         i++;
       }
-      infowindow.open(myMap, marker);
+      // infowindow.open(myMap, marker);
       questmarker.setPosition( new google.maps.LatLng(locs[i]) );
     });
   } else if (dist > presetDistance) {
@@ -174,41 +174,38 @@ function runMap(MapCenter) {
 }
 
 
+// var contentString1 = '<div id="content">'+
+// '<div id="siteNotice">'+
+// '</div>'+
+// '<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
+// '<div id="bodyContent">'+
+// '<p>Welcome <b>Agent Cherry</b>.' +
+// 'This is the beginning of your mission. ' +
+// 'Proceed to the next marker to continue.</p>'+
+// '</div>'+
+// '</div>';
 
+// var contentString2 = '<div id="content">'+
+// '<div id="siteNotice">'+
+// '</div>'+
+// '<h1 id="firstHeading" class="firstHeading">Quest 2</h1>'+
+// '<div id="bodyContent">'+
+// '<p>Welcome <b>Agent Cherry</b>.' +
+// 'This is the beginning of your mission. ' +
+// 'Proceed to the next marker to continue.</p>'+
+// '</div>'+
+// '</div>';
 
-
-var contentString = '<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
-'<div id="bodyContent">'+
-'<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission. ' +
-'Proceed to the next marker to continue.</p>'+
-'</div>'+
-'</div>';
-
-var contentString2 = '<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<h1 id="firstHeading" class="firstHeading">Quest 2</h1>'+
-'<div id="bodyContent">'+
-'<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission. ' +
-'Proceed to the next marker to continue.</p>'+
-'</div>'+
-'</div>';
-
-var contentString3 = '<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<h1 id="firstHeading" class="firstHeading">Quest 3</h1>'+
-'<div id="bodyContent">'+
-'<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission. ' +
-'Proceed to the next marker to continue.</p>'+
-'</div>'+
-'</div>';
+// var contentString3 = '<div id="content">'+
+// '<div id="siteNotice">'+
+// '</div>'+
+// '<h1 id="firstHeading" class="firstHeading">Quest 3</h1>'+
+// '<div id="bodyContent">'+
+// '<p>Welcome <b>Agent Cherry</b>.' +
+// 'This is the beginning of your mission. ' +
+// 'Proceed to the next marker to continue.</p>'+
+// '</div>'+
+// '</div>';
 
 var contentString4 = '<div id="content">'+
 '<div id="siteNotice">'+
@@ -221,19 +218,21 @@ var contentString4 = '<div id="content">'+
 '</div>'+
 '</div>';
 
-var ques = [ contentString, contentString2, contentString3, contentString4 ];
+// var ques = [ contentString1, contentString2, contentString3, contentString4 ];
 
 var infowindow = new google.maps.InfoWindow({
-  content: ques[i]
+  content: contentString4
 });
 
 
-// const e = React.createElement;
 
-// ReactDOM.render(
-//     e('a', { href: "https://google.se" },
-//       e('img', { src: "../img/mapHeader.jpg"})
-//   ),
-//     document.getElementById('react')
 
-// );
+const e = React.createElement;
+
+ReactDOM.render(
+    e('a', { href: "https://google.se" },
+      e('img', { src: "../img/mapHeader.jpg"})
+  ),
+    document.getElementById('react')
+
+);
