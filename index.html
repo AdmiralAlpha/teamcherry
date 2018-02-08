@@ -11,13 +11,34 @@
 <body>
     <div class="flexBtn">
     <header onclick="dropclose()">
-      <button class="btnL btns" type="submit" name="loginbutton" id="" onclick="">Log in</button>
+      <button class="btnL btns" type="submit" name="loginbutton" id="loginButton" onclick="">Log in</button>
       <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="">Sign up</button>
     </header>
     </div>
 
+    <div id="myPopupModalL" class="modalL">
+
+          <div class="modalL-content" style="overflow: scroll; height: 85%;">
+            <span class="exitL">&times;</span>
+            <p>Log in</p>
+            <form action="">
+                <div class="rowModal">
+                    <label for="usernameL">Username</label>
+                    <input type="text" id="usernameL" required>
+                </div>
+                <div class="rowModal">
+                    <label for="passwordL">Password</label>
+                    <input type="text" id="passwordL" required>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <script src="js/loginM.js"></script>
+
     <div id="myPopupModal" class="modal1">
-      <div class="modal1-content" style="overflow: scroll; height: 100%;">
+
+          <div class="modal1-content" style="overflow: scroll; height: 85%;">
             <span class="exit">&times;</span>
             <p>Create an account</p>
             <form action="">

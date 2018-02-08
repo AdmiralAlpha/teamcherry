@@ -276,7 +276,7 @@ a {
 .rowModal2 {
   padding-bottom: 13px;
 }
-.modal1 {
+.modal1, .modalL {
   display: none;
   position: fixed;
   z-index: 1;
@@ -288,7 +288,7 @@ a {
   background-color: rgba(0, 0, 0, 0.644);
 }
 
-.modal1-content {
+.modal1-content, .modalL-content {
   font-variant: small-caps;
   font-size: 18px;
   background-color: #ebebeb;
@@ -305,7 +305,7 @@ a {
   font-size: 30px;
 }
 
-.exit {
+.exit, .exitL {
   display: flex;
   justify-content: flex-end;
   color: #919191;
@@ -314,6 +314,8 @@ a {
 }
 
 .exit:hover,
+.exitL:hover,
+.exitL:focus,
 .exit:focus {
   color: rgb(122, 0, 0);
   text-decoration: none;
