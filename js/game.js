@@ -264,9 +264,8 @@ var infowindow = new google.maps.InfoWindow({
 const e = React.createElement;
 
 ReactDOM.render(
-    e('a', { href: "https://google.se" },
-      e('img', { src: "../img/mapHeader.jpg"})
-  ),
-    document.getElementById('react')
-
+e('a', { href: "https://google.se" },
+e('img', { src: "../img/user.png"})
+),
+document.getElementById('react')
 );
