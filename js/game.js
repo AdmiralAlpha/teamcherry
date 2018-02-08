@@ -4,46 +4,22 @@ options = {
   maximumAge: 0
 };
 
-var marker, questmarker;
-var presetDistance = 20; //meter?
+var marker, questmarker, currentQuest;
+var presetDistance = 1000; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
 
-var links = [ '../index.html', 'sovprofile.html', 'usprofile.html' ];
+var links = [ '../index.html', 'sovprofile.html?currentQuest=', 'usprofile.html?currentQuest=' ];
 
-var i = 0;
-
-var x = location.search;
-console.log(x);
-console.log(window.location.search);
+// var i = 0;
 
 
-function getUrlParameter(name) {
-  name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-  var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-  var results = regex.exec(location.search);
-  return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-};
-
-function getParameterByName(name, url) {
-  if (!url) url = window.location.href;
-  name = name.replace(/[\[\]]/g, "\\$&");
-  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-      results = regex.exec(url);
-  if (!results) return null;
-  if (!results[2]) return '';
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-
-function updateQueryStringParameter(uri, key, value) {
-  var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
-  var separator = uri.indexOf('?') !== -1 ? "&" : "?";
-  if (uri.match(re)) {
-    return uri.replace(re, '$1' + key + "=" + value + '$2');
-  }
-  else {
-    return uri + separator + key + "=" + value;
-  }
+var urlParams = new URLSearchParams(window.location.search);
+var c = parseInt(urlParams.get('currentQuest'));
+if (c) {
+  currentQuest = c;
+} else {
+  currentQuest = 0;
 }
 
 
@@ -59,12 +35,12 @@ function checkQuest(pos) {
   // console.log(dist);
   if (dist <= presetDistance) {
     questmarker.addListener('click', function() {
-    window.location.href = links[i];
-      if (i<3) {
-        i++;
-      }
+    window.location.href = links[currentQuest + 1] + currentQuest;
+      // if (i<3) {
+      //   i++;
+      // }
       // infowindow.open(myMap, marker);
-      questmarker.setPosition( new google.maps.LatLng(locs[i]) );
+      questmarker.setPosition( new google.maps.LatLng(locs[currentQuest]) );
     });
   } else if (dist > presetDistance) {
     google.maps.event.clearInstanceListeners(questmarker);
@@ -183,7 +159,7 @@ google.maps.event.addDomListener(window, 'load', startMap);
 
 // marker.setPosition(LatLng);
 function newMarker() {
-  var myLatLng = locs[i];
+  var myLatLng = locs[currentQuest];
 
   questmarker = new google.maps.Marker({
     position: myLatLng,

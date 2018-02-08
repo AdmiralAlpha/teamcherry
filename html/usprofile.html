@@ -21,10 +21,16 @@
         <li>Age: 26 </li>
         <li>Nationality: United states of america</li>
       <ul>
-        <button class="playNow btns1" type="submit" name="registerbutton" onclick="showRegister()"><a href="../html/game.html">Take Mission</a></button>
+        <button class="playNow btns1" type="submit" name="registerbutton" onclick="showRegister()"><a id="backtogame" href="../html/game.html">Take Mission</a></button>
     <div>
   <div>
 
   </div>
+  <script>
+    var urlParams = new URLSearchParams(window.location.search);
+    var c = parseInt(urlParams.get('currentQuest'));
+      document.getElementById('backtogame').href = "../html/game.html?currentQuest=" +(c + 1);
+  
+    </script>
 </body>
 </html>
