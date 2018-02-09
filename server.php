@@ -6,7 +6,7 @@ $email = "";
 $password = "";
 $errors = array(); 
 
-$db = mysqli_connect('localhost', 'cherry', 'test', 'testcherry');
+$db = mysqli_connect('localhost', 'cherry', 'test', 'game_db');
 
 if (isset($_POST['submit'])) {
   
@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "Logged in!";
+  	$_SESSION['success'] = "You are logged in!";
     header('location: index.php');
   }
 }
