@@ -5,7 +5,7 @@ options = {
 };
 
 var marker, questmarker;
-var presetDistance = 5; //meter?
+var presetDistance = 20; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313889, lng: 18.110288}, {lat: 59.313629, lng: 18.110288} ];
 
@@ -197,12 +197,11 @@ content: contentString2
 });
 
 
-// const e = React.createElement;
+const e = React.createElement;
 
-// ReactDOM.render(
-//     e('a', { href: "https://google.se" },
-//       e('img', { src: "../img/mapHeader.jpg"})
-//   ),
-//     document.getElementById('react')
-
-// );
+ReactDOM.render(
+e('a', { href: "https://google.se" },
+e('img', { src: "../img/user.png"})
+),
+document.getElementById('react')
+);
