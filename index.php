@@ -13,13 +13,36 @@
 </head>
 <body>
     <div class="flexBtn">
-    <!--><header onclick="dropclose()"></!-->
-      <button class="btnL btns" type="submit" name="loginbutton" id="" onclick="">Log in</button>
-      <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="">Sign up</button>
+    <header onclick="dropclose()">
+      <button class="btnL btns" type="submit" name="loginbutton" id="logInButton">Log in</button>
+      <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton">Sign up</button>
     </header>
     </div>
 
+    <div id="myPopupModal2" class="modal2">
 
+          <div class="modal2-content" style="height: 40%;">
+            <span class="exit2">&times;</span>
+            <p>Sign in</p>
+
+            <form method="post" action="">
+                <div class="rowModal">
+                    <label for="username2">Username</label>
+                    <input type="text" name="username2" id="username2" value="<?php echo $username; ?>" required>
+                </div>
+                <div class="rowModal">
+                    <label for="password2">Password</label>
+                    <input type="password" name="password2" id="password2" value="<?php echo $username; ?>" required>
+                </div>
+                <div class="rowModal">
+                    <input type="submit" name="submit2" value="Log in" />
+                </div>
+            </form>
+          </div>
+
+    </div>
+
+    <script src="js/loginbutton.js"></script>
 
     <div id="myPopupModal" class="modal1">
 
@@ -49,8 +72,8 @@
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
-                    <input type="checkbox" name="teamU" value="USA"> Usa
-                    <input type="checkbox" name="teamS" value="Soviet" style="margin-left:35px">Soviet
+                    <input type="checkbox" name="team" id="teamU" value="1" tabIndex="1" onClick="ch(this)"> Usa
+                    <input type="checkbox" name="team" id="teamS" value="1" tabIndex="1" onClick="ch(this)" style="margin-left:35px">Soviet
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
