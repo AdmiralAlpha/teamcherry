@@ -14,32 +14,6 @@
 <body>
     <div class="flexBtn">
     <header onclick="dropclose()">
-<<<<<<< HEAD
-      <button class="btnL btns" type="submit" name="loginbutton" id="loginButton" onclick="">Log in</button>
-      <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="">Sign up</button>
-    </header>
-    </div>
-
-    <div id="myPopupModalL" class="modalL">
-
-          <div class="modalL-content" style="overflow: scroll; height: 85%;">
-            <span class="exitL">&times;</span>
-            <p>Log in</p>
-            <form action="">
-                <div class="rowModal">
-                    <label for="usernameL">Username</label>
-                    <input type="text" id="usernameL" required>
-                </div>
-                <div class="rowModal">
-                    <label for="passwordL">Password</label>
-                    <input type="text" id="passwordL" required>
-                </div>
-              </form>
-            </div>
-          </div>
-
-          <script src="js/loginM.js"></script>
-=======
       <button class="btnL btns" type="submit" name="loginbutton" id="logInButton">Log in</button>
       <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton">Sign up</button>
     </header>
@@ -69,7 +43,6 @@
     </div>
 
     <script src="js/loginbutton.js"></script>
->>>>>>> origin/master
 
     <div id="myPopupModal" class="modal1">
 
@@ -133,9 +106,9 @@
     <div class="content">
       <p>In Cold Spies you play as a spy for either the USA or the Soviet union.
          After you have picked a side the game will begin giving you missions on your map.<br><br>
-         When you get close enough too the a mission icon you can start the mission.
+         When you get close enough too the a mission icon you can start the mission. 
          You are then given a story at the end of which you have several options on how you can
-         handle your mission and depending your choise the mission will play out differently.<br><br>
+         handle your mission and depending your choise the mission will play out differently.<br><br> 
          You are scored depending on the choises you make during the game.
          There are good choices and bad choices, just like in real life.
          In the end your score is counted up to the teams score and you can also see your individual score compared to the rest of your team.</p>
