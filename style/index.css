@@ -248,7 +248,11 @@ a {
 
 }
 
-/* SIGNUP STRTS HERE*/
+/* SIGNUP AND LOGIN STRTS HERE*/
+
+.error {
+  color: red;
+}
 
 .rowModal {
   padding: 13px 0;
@@ -276,7 +280,8 @@ a {
 .rowModal2 {
   padding-bottom: 13px;
 }
-.modal1 {
+.modal1,
+.modal2 {
   display: none;
   position: fixed;
   z-index: 1;
@@ -288,7 +293,8 @@ a {
   background-color: rgba(0, 0, 0, 0.644);
 }
 
-.modal1-content {
+.modal1-content,
+.modal2-content {
   font-variant: small-caps;
   font-size: 18px;
   background-color: #ebebeb;
@@ -299,13 +305,15 @@ a {
   overflow: auto;
 }
 
-.modal1-content p {
+.modal1-content p,
+.modal2-content p {
   margin: 5px 0;
   text-align: center;
   font-size: 30px;
 }
 
-.exit {
+.exit,
+.exit2 {
   display: flex;
   justify-content: flex-end;
   color: #919191;
@@ -314,22 +322,12 @@ a {
 }
 
 .exit:hover,
-.exit:focus {
+.exit:focus,
+.exit2:hover,
+.exit2:focus {
   color: rgb(122, 0, 0);
   text-decoration: none;
   cursor: pointer;
-}
-
-.socialIcons {
-  margin-right: 0px;
-}
-
-footer p {
-  margin-left: 30px;
-}
-
-.socialIcons i {
-  margin-right: 30px;
 }
 
 @media screen and (max-width: 768px){
@@ -361,7 +359,8 @@ footer p {
 }
 
 @media screen and (max-width: 1024px){
-  .modal1-content {
+  .modal1-content,
+  .modal2-content {
     width: 50%;
   }
   .content p{
@@ -371,6 +370,16 @@ footer p {
 
 }
 
-/*-------------- SIGNUP ENDS -------------------------*/
+/*-------------- SIGNUP AND LOGIN ENDS -------------------------*/
 
-/*LOGIN STARTS HERE*/
+.socialIcons {
+  margin-right: 0px;
+}
+
+footer p {
+  margin-left: 30px;
+}
+
+.socialIcons i {
+  margin-right: 30px;
+}
