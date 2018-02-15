@@ -72,8 +72,8 @@
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
-                    <input type="checkbox" name="team" id="teamU" value="1" tabIndex="1" onClick="ch(this)"> Usa
-                    <input type="checkbox" name="team" id="teamS" value="1" tabIndex="1" onClick="ch(this)" style="margin-left:35px">Soviet
+                <input type="radio" name="team" id="teamU" value="usa"> Usa
+                <input type="radio" name="team" id="teamS" value="soviet" style="margin-left:35px">Soviet
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
