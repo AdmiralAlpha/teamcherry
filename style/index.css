@@ -198,7 +198,7 @@ h3 {
   width: 100%;
   height: 1000px;
   background-size: cover;
-  background-image: url('../img/flags.jpg');
+  background-image: url('../img/us-background.png');
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
