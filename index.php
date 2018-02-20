@@ -49,7 +49,7 @@
           <div class="modal1-content" style="overflow: scroll; height: 85%;">
             <span class="exit">&times;</span>
             <p>Create an account</p>
-            
+
             <form method="post" action="index.php">
 
                 <div class="rowModal">
@@ -72,8 +72,13 @@
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
+
                     <input type="checkbox" name="team" id="teamU" value="1" tabIndex="1" onClick="ch(this)"> Usa
                     <input type="checkbox" name="team" id="teamS" value="1" tabIndex="1" onClick="ch(this)" style="margin-left:35px">Soviet
+
+                <input type="radio" name="team" id="teamU" value="usa"> Usa
+                <input type="radio" name="team" id="teamS" value="soviet" style="margin-left:35px">Soviet
+
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
@@ -106,9 +111,9 @@
     <div class="content">
       <p>In Cold Spies you play as a spy for either the USA or the Soviet union.
          After you have picked a side the game will begin giving you missions on your map.<br><br>
-         When you get close enough too the a mission icon you can start the mission. 
+         When you get close enough too the a mission icon you can start the mission.
          You are then given a story at the end of which you have several options on how you can
-         handle your mission and depending your choise the mission will play out differently.<br><br> 
+         handle your mission and depending your choise the mission will play out differently.<br><br>
          You are scored depending on the choises you make during the game.
          There are good choices and bad choices, just like in real life.
          In the end your score is counted up to the teams score and you can also see your individual score compared to the rest of your team.</p>
