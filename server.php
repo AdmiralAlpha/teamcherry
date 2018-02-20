@@ -3,8 +3,8 @@ session_start();
 
 $username = "";
 $email = "";
-$password = "";
 $errors = array(); 
+$password = "";
 
 $db = mysqli_connect('localhost', 'cherry', 'test', 'game_db');
 
@@ -19,6 +19,10 @@ if (isset($_POST['submit'])) {
   if (empty($username)) { array_push($errors, "Fill in username"); }
   if (empty($email)) { array_push($errors, "Fill in email"); }
   if (empty($password)) { array_push($errors, "Fill in password"); }
+
+  if(strlen($_POST['password']) < 4){
+    array_push($errors, "Password is too short");
+  }
 
   if ($password != $cPassword) {
 	array_push($errors, "Passwords do not match");
