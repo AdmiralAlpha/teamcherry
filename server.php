@@ -37,15 +37,24 @@ if (isset($_POST['submit'])) {
     }
   }
 
-  //If zero errors, inputs will insert into database and direkt to player profile 
-  if (count($errors) == 0) {
-
-  	$query = "INSERT INTO player (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  /*USA*/
+  if (count($errors) == 0 && $team =='usa') {
+  	$query = "INSERT INTO player (username, email, password, team) 
+  			  VALUES('$username', '$email', '$password', '$team')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are logged in!";
-    header('location: index.php');
+    header('location: html/usprofile.html');
+  }
+  
+  /*Soviet*/
+  if (count($errors) == 0 && $team =='soviet') {
+  	$query = "INSERT INTO player (username, email, password, team) 
+  			  VALUES('$username', '$email', '$password', '$team')";
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "You are logged in!";
+    header('location: html/sovprofile.html');
   }
 }
 
