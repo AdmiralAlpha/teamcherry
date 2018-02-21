@@ -210,10 +210,8 @@ h3 {
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
-  text-align: center;
 }
+
 .passport2{
   width: 100%;
   height: 1000px;
@@ -233,9 +231,18 @@ h3 {
   background-image: url('../img/pass.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
+
+.pass-infous{
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  background-color: #3b2f23;
+  background-image: url('../img/uspass.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .pass-info h1{
   font-size: 4em;
 }
@@ -247,8 +254,8 @@ h3 {
   font-family: 'GNUTypewriterStandard';
   font-weight: normal;
   font-style: normal;
-
 }
+
 .passport button{
   background-color: black;
   margin-bottom: 40px;
@@ -258,6 +265,11 @@ h3 {
   padding-top: 35px;
   margin-left: 13%;
 }
+.picture-userus{
+  padding-top: 76px;
+  margin-left: 13%;
+}
+
 
 
 /*-----------PROFILE ENDS--------------------*/
@@ -378,6 +390,7 @@ a {
   .takeNow {
     width: 75%;
   }
+  
 
 }
 

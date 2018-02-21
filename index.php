@@ -120,7 +120,7 @@
       <a target="_blank" href="https://sv-se.facebook.com/"><i class="fa fa-facebook fa-2x"></i></a>
       <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
       <a target="_blank" href="https://github.com/AdmiralAlpha/teamcherry"><i class="fa fa-github fa-2x"></i></a>
-      <a href=""><i class="fa fa-envelope-o fa-2x"></i></a>
+      <a target="_blank" href="https://tinyurl.com/2fcpre6"><i class="fa fa-envelope-o fa-2x"></i></a>
       </div>
 
     </footer>
