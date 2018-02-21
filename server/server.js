@@ -15,9 +15,9 @@ REST.prototype.connectMysql = function() {
     var pool      =    mysql.createPool({
         connectionLimit : 100,
         host     : 'localhost',
-        user     : 'root',
-        password : 'secret',
-        database : 'restful_api_demo',
+        user     : 'cherry',
+        password : 'test',
+        database : 'game_db',
         debug    :  false
     });
     pool.getConnection(function(err,connection){
