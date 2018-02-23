@@ -8,7 +8,7 @@ table {
 
  border-collapse: collapse;
  width: 25%;
- color:  blue;
+ color: white;
  font-family: monospace;
  font-size: 30px;
  text-align: left;
@@ -17,11 +17,12 @@ margin-top: 10%;
 }
 
 th {
-  background-color: red;
+  background-color: black;
   color: white;
 }
 
-tr:nth-child(even) {background-color: #ff00ff}
+tr:nth-child(even) {background-color: grey}
+tr:nth-child(odd) {background-color: gray}
 
 
 @media screen and (max-width: 768px){
