@@ -12,6 +12,9 @@
 
 </head>
 <body>
+  <form action="leaderboard.php">
+    <input type="submit" value="Go to Google" />
+</form>
     <div class="flexBtn">
     <header onclick="dropclose()">
       <button class="btnL btns" type="submit" name="loginbutton" id="logInButton">Log in</button>
@@ -49,7 +52,7 @@
           <div class="modal1-content" style="overflow: scroll; height: 85%;">
             <span class="exit">&times;</span>
             <p>Create an account</p>
-            
+
             <form method="post" action="index.php">
 
                 <div class="rowModal">
@@ -106,9 +109,9 @@
     <div class="content">
       <p>In Cold Spies you play as a spy for either the USA or the Soviet union.
          After you have picked a side the game will begin giving you missions on your map.<br><br>
-         When you get close enough too the a mission icon you can start the mission. 
+         When you get close enough too the a mission icon you can start the mission.
          You are then given a story at the end of which you have several options on how you can
-         handle your mission and depending your choise the mission will play out differently.<br><br> 
+         handle your mission and depending your choise the mission will play out differently.<br><br>
          You are scored depending on the choises you make during the game.
          There are good choices and bad choices, just like in real life.
          In the end your score is counted up to the teams score and you can also see your individual score compared to the rest of your team.</p>

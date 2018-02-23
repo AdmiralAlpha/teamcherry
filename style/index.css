@@ -17,7 +17,7 @@ body {
   padding: 0;
   margin: 0;
   border: 0;
-  background-color: black;
+  background-color: #ff00ff;
   overflow-x: hidden;
 }
 
@@ -390,7 +390,7 @@ a {
   .takeNow {
     width: 75%;
   }
-  
+
 
 }
 
