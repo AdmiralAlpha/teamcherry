@@ -12,9 +12,6 @@
 
 </head>
 <body>
-  <form action="leaderboard.php">
-    <input type="submit" value="Go to Google" />
-</form>
     <div class="flexBtn">
     <header onclick="dropclose()">
       <button class="btnL btns" type="submit" name="loginbutton" id="logInButton">Log in</button>
