@@ -21,8 +21,8 @@ th {
   color: white;
 }
 
-tr:nth-child(even) {background-color: grey}
-tr:nth-child(odd) {background-color: gray}
+tr:nth-child(even) {background-color: grey;}
+tr:nth-child(odd) {background-color: #ccc}
 
 
 @media screen and (max-width: 768px){
