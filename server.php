@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
   $cPassword = mysqli_real_escape_string($db, $_POST['cPassword']);
-
+  $team = mysqli_real_escape_string($db, $_POST['team']);
   
   if (empty($username)) { array_push($errors, "Fill in username"); }
   if (empty($email)) { array_push($errors, "Fill in email"); }
