@@ -7,6 +7,8 @@
   <title>Leaderboard</title>
   </head>
   <body>
+    <button type="button" class="button" onclick="window.location.href='../html/game.html'">Back</button>
+    <button type="button" class="button2" onclick="window.location.href='../index.php'">To main page</button>
     <table>
   <tr>
     <th>Username</th>
