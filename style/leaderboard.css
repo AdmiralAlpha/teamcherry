@@ -21,6 +21,27 @@ th {
   color: white;
 }
 
+.button  {
+  color: white;
+  background-color: #3b2f23;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+}
+.button2  {
+  color: white;
+  background-color: #3b2f23;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+}
+
+
+
 tr:nth-child(even) {background-color: grey;}
 tr:nth-child(odd) {background-color: #ccc}
 
