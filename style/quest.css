@@ -17,9 +17,12 @@
 }
 
 .questTxt {
-  background-color: red;
-  /* margin: 20px; */
+  background-color: gray;
   font-family: myFont;
+}
+
+.questP {
+  padding: 5px;
 }
 
 .container {
@@ -32,3 +35,10 @@
   height: 130px;
   margin: 15px;
 }
+
+/* .btn {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  margin: 15px;
+} */
