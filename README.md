@@ -1,2 +1,0 @@
-# teamcherry
-game project
