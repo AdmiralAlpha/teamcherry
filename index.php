@@ -49,7 +49,7 @@
           <div class="modal1-content" style="overflow: scroll; height: 85%;">
             <span class="exit">&times;</span>
             <p>Create an account</p>
-            
+
             <form method="post" action="index.php">
 
                 <div class="rowModal">
@@ -72,8 +72,8 @@
                     <label for="team">Choose side:</label>
                 </div>
                 <div class="rowModal2">
-                <input type="radio" name="team" id="teamU" value="usa"> Usa
-                <input type="radio" name="team" id="teamS" value="soviet" style="margin-left:35px">Soviet
+                <input type="radio" name="team" value="usa"> Usa
+                <input type="radio" name="team" value="soviet" style="margin-left:35px">Soviet
                 </div>
                 <div class="rowModal1">
                 <input type="checkbox" required> I agree to the <a href="#" style="color:rgb(22, 165, 55)">Terms of Use</a>
@@ -106,21 +106,21 @@
     <div class="content">
       <p>In Cold Spies you play as a spy for either the USA or the Soviet union.
          After you have picked a side the game will begin giving you missions on your map.<br><br>
-         When you get close enough too the a mission icon you can start the mission. 
+         When you get close enough too the a mission icon you can start the mission.
          You are then given a story at the end of which you have several options on how you can
-         handle your mission and depending your choise the mission will play out differently.<br><br> 
+         handle your mission and depending your choise the mission will play out differently.<br><br>
          You are scored depending on the choises you make during the game.
          There are good choices and bad choices, just like in real life.
          In the end your score is counted up to the teams score and you can also see your individual score compared to the rest of your team.</p>
     </div>
     <footer>
-      <p>Contact us: teamCherry@kyh.se<br><br>  Members: Sebastian Bergström, Julia Bäcks, Victor Pettersson, Mikael Berglund, Emil Brunngård, Elias Liljegård</p>
+      <p>Contact us: teamCherry@kyh.se<br><br>  Members: Sebastian Bergström, Julia Bäcks, Victor Pettersson, Mikael Berglund, Emil Brunngård, Elias Liljegard</p>
 
       <div class="socialIcons">
-        <a href=""><i class="fa fa-facebook fa-2x"></i></a>
-        <a href=""><i class="fa fa-twitter fa-2x"></i></a>
-        <a href=""><i class="fa fa-github fa-2x"></i></a>
-        <a href=""><i class="fa fa-envelope-o fa-2x"></i></a>
+      <a target="_blank" href="https://sv-se.facebook.com/"><i class="fa fa-facebook fa-2x"></i></a>
+      <a target="_blank" href="https://twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
+      <a target="_blank" href="https://github.com/AdmiralAlpha/teamcherry"><i class="fa fa-github fa-2x"></i></a>
+      <a target="_blank" href="https://tinyurl.com/2fcpre6"><i class="fa fa-envelope-o fa-2x"></i></a>
       </div>
 
     </footer>

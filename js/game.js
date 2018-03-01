@@ -240,8 +240,8 @@ var infowindow = new google.maps.InfoWindow({
 const e = React.createElement;
 
 ReactDOM.render(
-e('a', { href: "https://google.se" },
-e('img', { src: "../img/user.png"})
+e('a', { href: "../html/leaderboard.php" },
+e('img', { src: "../img/usertiny.png"})
 ),
 document.getElementById('react')
 );

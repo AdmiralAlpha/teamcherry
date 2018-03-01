@@ -65,6 +65,13 @@ footer {
   margin-top: 130px;
 }
 
+.takeNow {
+  display: block;
+  margin-top: 90px;
+  width: 350px;
+  margin-left: 5px;
+}
+
 .btns {
   color: white;
   background-color: #3b2f23;
@@ -198,33 +205,57 @@ h3 {
   width: 100%;
   height: 1000px;
   background-size: cover;
-  background-image: url('../img/flags.jpg');
+  background-image: url('../img/us-background.png');
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: center;
-	align-content: center;
-  text-align: center;
+}
+
+.passport2{
+  width: 100%;
+  height: 1000px;
+  background-size: cover;
+  background-image: url('../img/sovflag2.jpg');
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+
 }
 .pass-info{
-  width: 40%;
-  height: 700px;
+  width: 70%;
+  height: 70%;
   margin: 0 auto;
   background-color: #3b2f23;
-  background-image: url('../img/old-paper.png');
+  background-image: url('../img/pass.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-
-
 }
+
+.pass-infous{
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  background-color: #3b2f23;
+  background-image: url('../img/uspass.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .pass-info h1{
   font-size: 4em;
 }
+
 .pass-ul{
-  font-size: 0.4em;
+  margin-left:9%;
+  font-size: 1.5em;
   list-style-type: none;
+  font-family: 'GNUTypewriterStandard';
+  font-weight: normal;
+  font-style: normal;
 }
+
 .passport button{
   background-color: black;
   margin-bottom: 40px;
@@ -232,13 +263,14 @@ h3 {
 }
 .picture-user{
   padding-top: 35px;
+  margin-left: 13%;
 }
-.pass-ul{
-  font-style: italic;
-  font-size: 2em;
-  color: black;
-  padding-top: 30px;
+.picture-userus{
+  padding-top: 76px;
+  margin-left: 13%;
 }
+
+
 
 /*-----------PROFILE ENDS--------------------*/
 
@@ -355,6 +387,10 @@ a {
   .btns1{
     font-size: 40px;
   }
+  .takeNow {
+    width: 75%;
+  }
+
 
 }
 
