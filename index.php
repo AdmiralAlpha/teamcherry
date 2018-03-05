@@ -96,12 +96,12 @@
           </div>
         </div>
 
-        <script src="js/signup.js"></script>
+        
 
     <div class="container">
       <h1>Cold spies</h1>
       <h3>Help fight the silent war</h3>
-      <button class="playNow btns1" type="submit" name="registerbutton" onclick="showRegister()"><a href="html/game.html">Play Now</a></button>
+      <button class="playNow btns1" type="submit" name="registerbutton" id="signUpButton" onclick="showRegister()">Play Now</button>
     </div>
 
     <div class="cont">
@@ -129,5 +129,6 @@
       </div>
 
     </footer>
+    <script src="js/signup.js"></script>
 </body>
 </html>

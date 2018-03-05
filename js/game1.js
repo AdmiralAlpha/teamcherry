@@ -9,7 +9,7 @@ var presetDistance = 1000; //meter?
 
 var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
 
-var links = [ '../index.html', 'usprofile.html?currentQuest=', 'usprofile.html?currentQuest=' ];
+var links = [ '../index.html', 'sovprofile.html?currentQuest=', 'sovrofile.html?currentQuest=' ];
 
 // var i = 0;
 
@@ -164,7 +164,7 @@ function newMarker() {
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
-    icon: '../img/usa.pin.png',
+    icon: '../img/soviet-pin.jpg',
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
