@@ -1,3 +1,13 @@
+<?php 
+  session_start(); 
+
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: ../index.php");
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +20,14 @@
 </head>
 <body>
   <div class="flexBtn">
-  <header onclick="dropclose()">
-    <button class="btnL btns" type="submit" name="loginbutton" id="signUpButton" onclick="window.location.href='leaderboard.php'">Leaderboard</button>
-    <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" onclick="window.location.href='../index.php'">Back</button>
-  </header>
+    <header onclick="dropclose()">
+      <button class="btnL btns" type="submit" name="loginbutton" id="signUpButton" onclick="location.href='leaderboard.php'">Leaderboard</button>
+      
+      <?php  if (isset($_SESSION['username'])) : ?>
+         <a href="sovprofile.php?logout='1'" class="btnR btns">Sign Out</a> 
+        <?php endif ?>
+        
+    </header>
   </div>
   <div class="passport2">
     <div class="pass-info">
