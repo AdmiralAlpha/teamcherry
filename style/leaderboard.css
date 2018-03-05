@@ -1,0 +1,61 @@
+body {
+background-image: url('../img/siberia.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+table {
+
+ border-collapse: collapse;
+ width: 25%;
+ color: white;
+ font-family: monospace;
+ font-size: 30px;
+ text-align: left;
+margin-left: 33%;
+margin-top: 10%;
+}
+
+th {
+  background-color: black;
+  color: white;
+}
+
+.button  {
+  color: white;
+  background-color: #3b2f23;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+}
+.button2  {
+  color: white;
+  background-color: #3b2f23;
+  font-size: 25px;
+  font-weight: 500;
+  border-radius: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+}
+
+
+
+tr:nth-child(even) {background-color: grey;}
+tr:nth-child(odd) {background-color: #ccc}
+
+
+@media screen and (max-width: 768px){
+  table{
+    font-size: 75px;
+  }
+
+
+@media screen and (max-width: 450px){
+  table{
+    font-size: 16px;
+  }
+
+
+}

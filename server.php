@@ -3,10 +3,10 @@ session_start();
 
 $username = "";
 $email = "";
-$password = "";
 $errors = array(); 
+$password = "";
 
-$db = mysqli_connect('localhost', 'cherry', 'test', 'game_db');
+$db = mysqli_connect('crockett.highstone.biz', 'cherry', 'cherry123', 'coldspies');
 
 if (isset($_POST['submit'])) {
   
@@ -14,11 +14,15 @@ if (isset($_POST['submit'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password = mysqli_real_escape_string($db, $_POST['password']);
   $cPassword = mysqli_real_escape_string($db, $_POST['cPassword']);
-
+  $team = mysqli_real_escape_string($db, $_POST['team']);
   
   if (empty($username)) { array_push($errors, "Fill in username"); }
   if (empty($email)) { array_push($errors, "Fill in email"); }
   if (empty($password)) { array_push($errors, "Fill in password"); }
+
+  if(strlen($_POST['password']) < 4){
+    array_push($errors, "Password is too short");
+  }
 
   if ($password != $cPassword) {
 	array_push($errors, "Passwords do not match");
@@ -37,15 +41,24 @@ if (isset($_POST['submit'])) {
     }
   }
 
-  //If zero errors, inputs will insert into database and direkt to player profile 
-  if (count($errors) == 0) {
-
-  	$query = "INSERT INTO player (username, email, password) 
-  			  VALUES('$username', '$email', '$password')";
+  /*USA*/
+  if (count($errors) == 0 && $team =='usa') {
+  	$query = "INSERT INTO player (username, email, password, team) 
+  			  VALUES('$username', '$email', '$password', '$team')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are logged in!";
-    header('location: index.php');
+    header('location: html/usprofile.html');
+  }
+  
+  /*Soviet*/
+  if (count($errors) == 0 && $team =='soviet') {
+  	$query = "INSERT INTO player (username, email, password, team) 
+  			  VALUES('$username', '$email', '$password', '$team')";
+  	mysqli_query($db, $query);
+  	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "You are logged in!";
+    header('location: html/sovprofile.html');
   }
 }
 

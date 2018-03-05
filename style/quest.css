@@ -1,0 +1,41 @@
+@font-face {
+  font-family: myFont;
+  src: url('../img/TOSCA.ttf');
+}
+
+.questBar {
+  background-size: cover;
+  background-image: url('../img/flags2.jpg');
+}
+
+.questBar>h1 {
+  font-family: myFont;
+  color: white;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.questTxt {
+  background-color: gray;
+  font-family: myFont;
+}
+
+.questP {
+  padding: 5px;
+}
+
+.container {
+  background-color: #3b2f23;
+  height: 100vh;
+}
+
+.pic {
+  width: 130px;
+  height: 130px;
+  margin: 15px;
+}
+
+a {
+text-decoration: none;
+}
