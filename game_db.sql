@@ -1,4 +1,5 @@
 
+
 ﻿
 
 -- phpMyAdmin SQL Dump
@@ -10,6 +11,7 @@
 -- Serverversion: 10.1.30-MariaDB
 -- PHP-version: 7.2.1
 
+﻿
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;

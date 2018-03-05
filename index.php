@@ -116,8 +116,6 @@
                 </div>
                 <div class="rowModal2">
 
-                    <input type="checkbox" name="team" id="teamU" value="1" tabIndex="1" onClick="ch(this)"> Usa
-                    <input type="checkbox" name="team" id="teamS" value="1" tabIndex="1" onClick="ch(this)" style="margin-left:35px">Soviet
 
                 <input type="radio" name="team" id="teamU" value="usa"> Usa
                 <input type="radio" name="team" id="teamS" value="soviet" style="margin-left:35px">Soviet
