@@ -19,14 +19,14 @@
 <body>
 
   <header>
-    <button class="btnL btns" type="submit" name="loginbutton" id="logInButton" data-toggle="modal" data-target="#logModal">Log in</button>
-    <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" data-toggle="modal" data-target="#regModal">Sign up</button>
+    <button class="btnL btns" type="submit" name="loginbutton" id="logInButton" data-toggle="modal" data-target="#myPopupModal2">Log in</button>
+    <button class="btnR btns" type="submit" name="registerbutton" id="signUpButton" data-toggle="modal" data-target="#myPopupModal">Sign up</button>
   </header>
 
   <div class="container">
 
     <!-- Modal -->
-    <div class="modal fade" id="regModal" role="register">
+    <div class="modal fade" id="myPopupModal" role="register">
       <div class="modal-dialog">
 
         <div class="modal-content">
@@ -85,7 +85,7 @@
     </div>
 
     <!-- Modal -->
-    <div class="modal fade" id="logModal" role="log in">
+    <div class="modal fade" id="myPopupModal2" role="log in">
       <div class="modal-dialog">
 
         <div class="modal-content">
@@ -94,7 +94,6 @@
             <h4 class="modal-title">Sign in</h4>
           </div>
           <div class="modal-body">
-              <!-- <span class="exit2">&times;</span> ??? -->
             <form method="post" action="">
               <div class="rowModal">
                 <label for="username2">Username</label>
