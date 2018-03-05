@@ -6,7 +6,7 @@ $email = "";
 $errors = array(); 
 $password = "";
 
-$db = mysqli_connect('localhost', 'cherry', 'test', 'game_db');
+$db = mysqli_connect('crockett.highstone.biz', 'cherry', 'cherry123', 'coldspies');
 
 if (isset($_POST['submit'])) {
   
