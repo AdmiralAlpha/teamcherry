@@ -62,3 +62,26 @@ if (isset($_POST['submit'])) {
   }
 }
 
+if (isset($_POST['login'])) {
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $password = mysqli_real_escape_string($db, $_POST['password']);
+
+  if (empty($username)) {
+  	array_push($errors, "Fill in username");
+  }
+  if (empty($password)) {
+  	array_push($errors, "Fill in password");
+  }
+
+  if (count($errors) == 0) {
+  	$query = "SELECT * FROM player WHERE username='$username' AND password='$password'";
+  	$results = mysqli_query($db, $query);
+  	if (mysqli_num_rows($results) == 1) {
+  	  $_SESSION['username'] = $username;
+  	  header('location: html/usprofile.php');
+  	}else {
+  		array_push($errors, "Wrong username or password");
+  	}
+  }
+}
+
