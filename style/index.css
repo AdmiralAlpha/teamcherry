@@ -75,7 +75,7 @@ footer {
 .btns {
   color: white;
   background-color: #3b2f23;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 5px;
   border: solid 1px white;
@@ -98,8 +98,8 @@ footer {
 }
 
 .flexBtn {
-  display: flex;
-  width: 100%;
+  /* display: flex; */
+  /* width: 100%; */
 }
 
 .container {

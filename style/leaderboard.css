@@ -1,8 +1,4 @@
-body {
-background-image: url('../img/siberia.jpg');
-background-repeat: no-repeat;
-background-size: cover;
-}
+body {background-image: url('../img/siberia.jpg');background-repeat: no-repeat;background-size: cover;}
 
 table {
 
@@ -24,7 +20,7 @@ th {
 .button  {
   color: white;
   background-color: #3b2f23;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 5px;
   border: solid 1px white;
@@ -33,7 +29,7 @@ th {
 .button2  {
   color: white;
   background-color: #3b2f23;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   border-radius: 5px;
   border: solid 1px white;
@@ -48,13 +44,25 @@ tr:nth-child(odd) {background-color: #ccc}
 
 @media screen and (max-width: 768px){
   table{
-    font-size: 75px;
+    font-size: 16px;
   }
+  body {
+  background-image: url('../img/siberia.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  }
+}
 
-
-@media screen and (max-width: 450px){
+@media screen and (min-width: 450px){
   table{
     font-size: 16px;
+  }
+  body {
+  background-image: url('../img/siberia.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
   }
 
 
