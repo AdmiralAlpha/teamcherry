@@ -36,6 +36,11 @@
   margin: 15px;
 }
 
-a {
-text-decoration: none;
+
+.btn {
+  font-family: myFont;
+}
+
+a { 
+  color: inherit; 
 }
