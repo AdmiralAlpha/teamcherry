@@ -1,4 +1,4 @@
-var modal2 = document.getElementById('myPopupModal2');
+var modal2 = document.getElementById('logModal');
 
 var btn2 = document.getElementById("logInButton");
 

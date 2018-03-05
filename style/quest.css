@@ -36,9 +36,6 @@
   margin: 15px;
 }
 
-/* .btn {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  margin: 15px;
-} */
+a {
+text-decoration: none;
+}

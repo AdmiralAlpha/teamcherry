@@ -1,4 +1,4 @@
-var modal = document.getElementById('myPopupModal');
+var modal = document.getElementById('regModal');
 
 var btn = document.getElementById("signUpButton");
 
