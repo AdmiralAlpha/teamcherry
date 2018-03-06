@@ -7,8 +7,35 @@ options = {
 var marker, questmarker, currentQuest;
 var presetDistance = 10000; //meter?
 
-var locs = [{ lat: 59.313289, lng: 18.110288 }, { lat: 59.313289, lng: 18.112088 }, { lat: 59.313289, lng: 18.113888 }, { lat: 59.313289, lng: 18.116888 }, { lat: 59.313289, lng: 18.117888 }];
+//const api_url = "http://localhost:3000/api";
+const api_url = "https://gentle-eyrie-55166.herokuapp.com/api";
 
+var locs = [];
+var obj = {};
+function fetchLocs() {
+var locs2 = [{ lat: 59.313289, lng: 18.110288 }, { lat: 59.313289, lng: 18.112088 }, { lat: 59.313289, lng: 18.113888 }, { lat: 59.313289, lng: 18.116888 }, { lat: 59.313289, lng: 18.117888 }];
+fetch(api_url + '/markers', {
+	method: 'get'
+}).then(function(res) {
+  return res.json();
+}).then(function(j) {
+  var m = j.Markers;
+  //console.log(m);
+  for (i in m) {
+    obj = new google.maps.LatLng(m[i].latitude, m[i].longitude);
+    //obj.lat = parseFloat(m[i].latitude);
+    //obj.lng = parseFloat(m[i].longitude);
+    
+    locs.push(obj);
+  }
+  startMap();
+}).catch(function(err) {
+	// Error :(
+});
+console.log(locs);
+//console.log(locs2);
+
+}
 var links = ['../index.html', 'quest1.html?currentQuest=', 'quest2.html?currentQuest=', 'quest3.html?currentQuest=', 'quest4.html?currentQuest=', 'quest5.html?currentQuest='];
 
 
@@ -27,16 +54,19 @@ function error(err) {
 
 function checkQuest(pos) {
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+
   questPos = questmarker.getPosition();
   marker.setPosition(playerPos);
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
   // console.log(dist);
   if (dist <= presetDistance) {
+    console.log("close");
     questmarker.addListener('click', function () {
       window.location.href = links[currentQuest + 1] + currentQuest;
       questmarker.setPosition(new google.maps.LatLng(locs[currentQuest]));
     });
   } else if (dist > presetDistance) {
+    console.log("not close");
     google.maps.event.clearInstanceListeners(questmarker);
   }
 
@@ -149,12 +179,11 @@ function initMap(myPos) {
 
 }
 
-google.maps.event.addDomListener(window, 'load', startMap);
+google.maps.event.addDomListener(window, 'load', fetchLocs);
 
 
 function newMarker() {
   var myLatLng = locs[currentQuest];
-
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
