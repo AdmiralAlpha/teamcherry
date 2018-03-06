@@ -5,11 +5,11 @@ options = {
 };
 
 var marker, questmarker, currentQuest;
-var presetDistance = 1000; //meter?
+var presetDistance = 10000; //meter?
 
-var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888} ];
+var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888}, {lat: 59.313289, lng: 18.117888}];
 
-var links = [ '../index.html', 'sovprofile.html?currentQuest=', 'usprofile.html?currentQuest=' ];
+var links = [ '../index.html', 'quest1.html?currentQuest=', 'quest2.html?currentQuest=', 'quest3.html?currentQuest=', 'quest4.html?currentQuest=', 'quest5.html?currentQuest=' ];
 
 // var i = 0;
 
