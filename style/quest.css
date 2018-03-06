@@ -31,16 +31,18 @@
 }
 
 .pic {
-  width: 130px;
-  height: 130px;
-  margin: 15px;
+  /* width: 456px;
+  height: 108px; */
+  margin: 10px;
 }
 
 
 .btn {
   font-family: myFont;
+  margin-bottom: 10px;
 }
 
 a { 
   color: inherit; 
+
 }
