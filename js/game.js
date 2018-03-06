@@ -209,7 +209,7 @@ const e = React.createElement;
 
 ReactDOM.render(
   e('a', { href: "../html/leaderboard.php" },
-    e('img', { src: "../img/usertiny.png" })
+    e('img', { src: "../img/questspy2.jpg" })
   ),
   document.getElementById('react')
 );

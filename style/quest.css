@@ -14,19 +14,23 @@
   margin: 0;
   padding: 0;
   border: 0;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .questTxt {
-  background-color: gray;
+  background-color: #3b2f23;
+  color: white;
   font-family: myFont;
+  padding: 7px;
 }
 
 .questP {
   padding: 5px;
+  color: white;
 }
 
 .container {
-  background-color: #3b2f23;
+  background-color: black;
   height: 100vh;
 }
 
@@ -39,6 +43,8 @@
 .btn {
   font-family: myFont;
   margin-bottom: 10px;
+  background-color: #3b2f23;
+  color: white;
 }
 
 a { 
