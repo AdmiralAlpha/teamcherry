@@ -75,13 +75,24 @@ if (isset($_POST['login'])) {
 
   if (count($errors) == 0) {
   	$query = "SELECT * FROM player WHERE username='$username' AND password='$password'";
-  	$results = mysqli_query($db, $query);
-  	if (mysqli_num_rows($results) == 1) {
-  	  $_SESSION['username'] = $username;
-  	  header('location: html/usprofile.php');
-  	}else {
-  		array_push($errors, "Wrong username or password");
-  	}
+    $results = mysqli_query($db, $query);
+    $user = mysqli_fetch_assoc($results);
+    
+  if (mysqli_num_rows($results) == 1) {
+    if ($user['team'] === 'usa') {
+      $_SESSION['username'] = $username;
+      header('location: html/usprofile.php');
+    }
+
+    if ($user['team'] === 'soviet') {
+      $_SESSION['username'] = $username;
+      header('location: html/sovprofile.php');
+    }
   }
-}
+
+  }
+    else {
+  		array_push($errors, "Wrong username or password");
+    }
+  }
 
