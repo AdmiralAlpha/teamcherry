@@ -384,15 +384,19 @@ a {
   }
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 454px){
   .btns1{
     font-size: 40px;
   }
   .takeNow {
-    width: 75%;
+    width: 85%;
   }
-
-
+  .picture-userus{
+    width: 80%;
+  }
+  .picture-user{
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 1024px){
