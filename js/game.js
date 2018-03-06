@@ -185,7 +185,7 @@ function newMarker() {
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
-    icon: '../img/rsz_1aim-marker.jpg',
+    icon: '../img/blackpin.png.png',
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
