@@ -121,7 +121,7 @@
 
   <div class="cont">
     <p>The text adventure of a lifetime. Fight on either the side of the USA or the Soviet union as a spy trying to uncover
-      the other's sides secrets</p>
+      the other sides' secrets</p>
   </div>
   <div class="content">
     <p>In Cold Spies you play as a spy for either the USA or the Soviet union. After you have picked a side the game will begin

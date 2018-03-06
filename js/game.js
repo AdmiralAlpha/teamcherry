@@ -208,7 +208,7 @@ function runMap(MapCenter) {
 const e = React.createElement;
 
 ReactDOM.render(
-  e('a', { href: "../html/leaderboard.php" },
+  e('a', {},
     e('img', { src: "../img/questspy2.jpg" })
   ),
   document.getElementById('react')

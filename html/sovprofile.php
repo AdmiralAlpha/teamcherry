@@ -33,7 +33,7 @@
 
   <div class="passport2">
     <div class="pass-info">
-      <img class="picture-user" src="../img/user.png" alt="picture of user">
+      <img class="picture-user" src="../img/questspy2.jpg" alt="picture of user">
       <ul class="pass-ul">
         <li>Name: Yvonne Strahovksi</li>
         <li>Age: 33</li>
