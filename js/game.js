@@ -25,7 +25,7 @@ fetch(api_url + '/markers', {
     obj = new google.maps.LatLng(m[i].latitude, m[i].longitude);
     //obj.lat = parseFloat(m[i].latitude);
     //obj.lng = parseFloat(m[i].longitude);
-    
+
     locs.push(obj);
   }
   startMap();
@@ -187,7 +187,7 @@ function newMarker() {
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
-    icon: '../img/rsz_1aim-marker.jpg',
+    icon: '../img/blackpin.png.png',
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
