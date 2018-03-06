@@ -32,7 +32,7 @@
 
   <div class="passport">
     <div class="pass-infous">
-      <img class="picture-userus" src="../img/questspy2.jpg" alt="picture of user">
+      <img class="picture-userus" src="../img/user.png" alt="picture of user">
       <ul class="pass-ul">
         <li>Name: Ken Smith</li>
         <li>Age: 35 </li>
