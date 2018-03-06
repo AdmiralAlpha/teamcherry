@@ -4,7 +4,7 @@
 }
 
 .questBar {
-  background-size: cover;
+  background-size: 100%;
   background-image: url('../img/flags2.jpg');
 }
 
@@ -31,9 +31,8 @@
 }
 
 .pic {
-  /* width: 456px;
-  height: 108px; */
-  margin: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 

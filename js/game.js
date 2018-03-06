@@ -5,13 +5,36 @@ options = {
 };
 
 var marker, questmarker, currentQuest;
-var presetDistance = 10000; //meter?
+var presetDistance = 10; //meter?
 
-var locs = [ {lat: 59.313289, lng: 18.110288}, {lat: 59.313289, lng: 18.112088}, {lat: 59.313289, lng: 18.113888}, {lat: 59.313289, lng: 18.116888}, {lat: 59.313289, lng: 18.117888}];
+//const api_url = "http://localhost:3000/api";
+const api_url = "https://gentle-eyrie-55166.herokuapp.com/api";
 
-var links = [ '../index.html', 'quest1.html?currentQuest=', 'quest2.html?currentQuest=', 'quest3.html?currentQuest=', 'quest4.html?currentQuest=', 'quest5.html?currentQuest=' ];
+var locs = [];
+var obj = {};
+function fetchLocs() {
+  //var locs2 = [{ lat: 59.313289, lng: 18.110288 }, { lat: 59.313289, lng: 18.112088 }, { lat: 59.313289, lng: 18.113888 }, { lat: 59.313289, lng: 18.116888 }, { lat: 59.313289, lng: 18.117888 }];
+  fetch(api_url + '/markers', {
+    method: 'get'
+  }).then(function (res) {
+    return res.json();
+  }).then(function (j) {
+    var m = j.Markers;
+    //console.log(m);
+    for (i in m) {
+      obj = new google.maps.LatLng(m[i].latitude, m[i].longitude);
+      locs.push(obj);
+    }
+    startMap();
+  }).catch(function (err) {
+    // Error :(
+  });
+  console.log(locs);
+  //console.log(locs2);
 
-// var i = 0;
+}
+
+var links = ['../index.html', 'quest1.html?currentQuest=', 'quest2.html?currentQuest=', 'quest3.html?currentQuest=', 'quest4.html?currentQuest=', 'quest5.html?currentQuest='];
 
 
 var urlParams = new URLSearchParams(window.location.search);
@@ -29,20 +52,19 @@ function error(err) {
 
 function checkQuest(pos) {
   playerPos = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+
   questPos = questmarker.getPosition();
   marker.setPosition(playerPos);
   dist = google.maps.geometry.spherical.computeDistanceBetween(playerPos, questPos);
   // console.log(dist);
   if (dist <= presetDistance) {
-    questmarker.addListener('click', function() {
-    window.location.href = links[currentQuest + 1] + currentQuest;
-      // if (i<3) {
-      //   i++;
-      // }
-      // infowindow.open(myMap, marker);
-      questmarker.setPosition( new google.maps.LatLng(locs[currentQuest]) );
+    console.log("close");
+    questmarker.addListener('click', function () {
+      window.location.href = links[currentQuest + 1] + currentQuest;
+      questmarker.setPosition(new google.maps.LatLng(locs[currentQuest]));
     });
   } else if (dist > presetDistance) {
+    console.log("not close");
     google.maps.event.clearInstanceListeners(questmarker);
   }
 
@@ -65,7 +87,7 @@ function initMap(myPos) {
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     maxZoom: MapZoomMax,
     minZoom: MapZoomMin,
-    //Turn off the map controls as we will be adding our own later.
+
     panControl: false,
     mapTypeControl: false,
     styles: [
@@ -155,16 +177,15 @@ function initMap(myPos) {
 
 }
 
-google.maps.event.addDomListener(window, 'load', startMap);
+google.maps.event.addDomListener(window, 'load', fetchLocs);
 
-// marker.setPosition(LatLng);
+
 function newMarker() {
   var myLatLng = locs[currentQuest];
-
   questmarker = new google.maps.Marker({
     position: myLatLng,
     map: myMap,
-    icon: '../img/usa.pin.png',
+    icon: '../img/rsz_1aim-marker.jpg',
     title: 'Quest'
   });
   questmarker.setAnimation(google.maps.Animation.BOUNCE);
@@ -184,64 +205,11 @@ function runMap(MapCenter) {
 }
 
 
-// var contentString1 = '<div id="content">'+
-// '<div id="siteNotice">'+
-// '</div>'+
-// '<h1 id="firstHeading" class="firstHeading">Spy Quest</h1>'+
-// '<div id="bodyContent">'+
-// '<p>Welcome <b>Agent Cherry</b>.' +
-// 'This is the beginning of your mission. ' +
-// 'Proceed to the next marker to continue.</p>'+
-// '</div>'+
-// '</div>';
-
-// var contentString2 = '<div id="content">'+
-// '<div id="siteNotice">'+
-// '</div>'+
-// '<h1 id="firstHeading" class="firstHeading">Quest 2</h1>'+
-// '<div id="bodyContent">'+
-// '<p>Welcome <b>Agent Cherry</b>.' +
-// 'This is the beginning of your mission. ' +
-// 'Proceed to the next marker to continue.</p>'+
-// '</div>'+
-// '</div>';
-
-// var contentString3 = '<div id="content">'+
-// '<div id="siteNotice">'+
-// '</div>'+
-// '<h1 id="firstHeading" class="firstHeading">Quest 3</h1>'+
-// '<div id="bodyContent">'+
-// '<p>Welcome <b>Agent Cherry</b>.' +
-// 'This is the beginning of your mission. ' +
-// 'Proceed to the next marker to continue.</p>'+
-// '</div>'+
-// '</div>';
-
-var contentString4 = '<div id="content">'+
-'<div id="siteNotice">'+
-'</div>'+
-'<h1 id="firstHeading" class="firstHeading">Quest 4</h1>'+
-'<div id="bodyContent">'+
-'<p>Welcome <b>Agent Cherry</b>.' +
-'This is the beginning of your mission. ' +
-'Proceed to the next marker to continue.</p>'+
-'</div>'+
-'</div>';
-
-// var ques = [ contentString1, contentString2, contentString3, contentString4 ];
-
-var infowindow = new google.maps.InfoWindow({
-  content: contentString4
-});
-
-
-
-
 const e = React.createElement;
 
 ReactDOM.render(
-e('a', { href: "../html/leaderboard.php" },
-e('img', { src: "../img/usertiny.png"})
-),
-document.getElementById('react')
+  e('a', { href: "../html/leaderboard.php" },
+    e('img', { src: "../img/usertiny.png" })
+  ),
+  document.getElementById('react')
 );
