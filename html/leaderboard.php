@@ -16,7 +16,7 @@
     <th>Score</th>
   </tr>
   <?php
-  $conn= mysqli_connect("localhost", "cherry", "test", "game_db");
+  $conn= mysqli_connect('crockett.highstone.biz', 'cherry', 'cherry123', 'coldspies');
   if (!$conn) {
     echo "Error: Unable to connect to MySQL." . PHP_EOL;
   echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
