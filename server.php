@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are logged in!";
-    header('location: html/usprofile.html');
+    header('location: html/usprofile.php');
   }
   
   /*Soviet*/
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are logged in!";
-    header('location: html/sovprofile.html');
+    header('location: html/sovprofile.php');
   }
 }
 
