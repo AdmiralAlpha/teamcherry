@@ -39,7 +39,7 @@
         <li>Nationality: USA</li>
         <ul>
           <button class="takeNow btns1" type="submit" name="registerbutton" onclick="showRegister()">
-            <a id="backtogame" href="../html/game.html">Take Mission</a>
+            <a id="backtogame" href="game.html">Take Mission</a>
           </button>
     </div>
   </div>
