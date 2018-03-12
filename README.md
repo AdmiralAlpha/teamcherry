@@ -30,9 +30,15 @@ Our game is hosted at this site: https://coldspies.gouk.pw/
 
 
 Contributers:
-Julia Bäcks
+Julia BÃ¤cks
 Mikael Berglund
 Elias Liljegard
+<<<<<<< HEAD
 Victor Pettersson
 Sebastian Bergström
 Emil Brunngård
+=======
+Viktor Pettersson
+Sebastian BergstrÃ¶m
+Emil BrunngÃ¥rd
+>>>>>>> 53e7677c5ebaab25fd7e1cc0acde8374a423a02c
