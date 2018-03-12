@@ -30,9 +30,9 @@ Our game is hosted at this site: https://coldspies.gouk.pw/
 
 
 Contributers:
-Julia Bäcks
+Julia BÃ¤cks
 Mikael Berglund
 Elias Liljegard
 Viktor Pettersson
-Sebastian Bergström
-Emil Brunnberg
+Sebastian BergstrÃ¶m
+Emil BrunngÃ¥rd
