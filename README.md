@@ -33,6 +33,6 @@ Contributers:
 Julia Bäcks
 Mikael Berglund
 Elias Liljegard
-Viktor Pettersson
+Victor Pettersson
 Sebastian Bergström
 Emil Brunngård
