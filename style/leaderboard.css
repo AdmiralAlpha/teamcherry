@@ -1,4 +1,5 @@
 body {
+
 background-image: url('../img/siberia.jpg');
 background-repeat: no-repeat;
 background-size: cover;
@@ -23,6 +24,8 @@ th {
 
 .button  {
   color: white;
+  
+  color: white;
   background-color: #3b2f23;
   font-size: 25px;
   font-weight: 500;
@@ -30,6 +33,7 @@ th {
   border: solid 1px white;
   cursor: pointer;
 }
+
 .button2  {
   color: white;
   background-color: #3b2f23;
